@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        System.out.println(12);
+//        System.out.println(12);
         Intent intent = new Intent(this, TodoListActivity.class);
         startActivity(intent);
     }
