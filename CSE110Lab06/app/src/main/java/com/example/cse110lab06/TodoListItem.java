@@ -22,6 +22,7 @@ public class TodoListItem {
         this.text = text;
         this.completed = completed;
         this.order = order;
+        //this is for testing
     }
 
     @Override
