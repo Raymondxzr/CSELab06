@@ -3,6 +3,7 @@ package com.example.cse110lab06;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,7 +43,7 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ViewHo
     public long getItemId(int position) { return todoItems.get(position).id; }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private final Textview textView;
+        private final TextView textView;
         private TodoListItem todoItem;
 
         public ViewHolder (@NonNull View itemView) {
