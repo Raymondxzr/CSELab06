@@ -19,17 +19,22 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ViewHo
     private Consumer<TodoListItem> onCheckBoxClicked;
     private BiConsumer<TodoListItem,String> OnTextEditedHandler;
 
+    private TodoListViewModel viewModel;
+//    public TodoListAdapter(TodoListViewModel viewModel) {
+//        this.viewModel = viewModel;
+//    }
     public void setTodoListItems(List<TodoListItem> newTodoItems) {
         this.todoItems.clear();
         this.todoItems = newTodoItems;
         notifyDataSetChanged();
     }
-    public void setOnTextEditedHandler(BiConsumer<TodoListItem,String> onTextEdited) {
-        this.OnTextEditedHandler = onTextEdited;
-    }
     public void setOnCheckBoxClickedHandler(Consumer<TodoListItem> onCheckBoxClicked) {
         this.onCheckBoxClicked = onCheckBoxClicked;
     }
+    public void setOnTextEditedHandler(BiConsumer<TodoListItem,String> onTextEdited) {
+        this.OnTextEditedHandler = onTextEdited;
+    }
+
 
     @NonNull
     @Override
@@ -78,12 +83,12 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ViewHo
             this.todoItem = todoItem;
             this.textView.setText(todoItem.text);
 //            CheckBox checkbox = findViewById(R.id.completed);
-//            this.checkBox.setChecked(todoItem.completed);
-            if (todoItem.order==1) {
-                this.checkBox.setChecked(true);
-            } else {
-                this.checkBox.setChecked(false);
-            }
+            this.checkBox.setChecked(todoItem.completed);
+//            if (todoItem.order==1) {
+//                this.checkBox.setChecked(true);
+//            } else {
+//                this.checkBox.setChecked(false);
+//            }
         }
 
     }

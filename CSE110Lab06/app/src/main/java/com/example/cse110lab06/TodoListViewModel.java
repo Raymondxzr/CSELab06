@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.room.Query;
 
 import java.util.List;
 
@@ -20,10 +21,7 @@ public class TodoListViewModel extends AndroidViewModel {
         TodoDatabase db = TodoDatabase.getSingleton(context);
         todoListItemDao = db.todoListItemDao();
     }
-    public void toggleCompleted(TodoListItem todoListItem) {
-        todoListItem.completed = !todoListItem.completed;
-        todoListItemDao.update(todoListItem);
-    }
+
     public LiveData<List<TodoListItem>> getTodoListItems() {
         if (todoListItems == null) {
             loadUsers();
@@ -37,6 +35,15 @@ public class TodoListViewModel extends AndroidViewModel {
     public void updateText(TodoListItem todoListItem, String newText) {
         todoListItem. text = newText;
         todoListItemDao.update(todoListItem);
+    }
+    public void toggleCompleted(TodoListItem todoListItem) {
+        todoListItem.completed = !todoListItem.completed;
+        todoListItemDao.update(todoListItem);
+    }
+    public void createTodo (String text) {
+        int end0fListOrder = todoListItemDao.getOrderForAppend();
+        TodoListItem newItem = new TodoListItem(text, false, end0fListOrder);
+        todoListItemDao.insert(newItem);
     }
 
 }
