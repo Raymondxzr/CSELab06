@@ -20,9 +20,9 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ViewHo
     private BiConsumer<TodoListItem,String> OnTextEditedHandler;
 
     private TodoListViewModel viewModel;
-//    public TodoListAdapter(TodoListViewModel viewModel) {
-//        this.viewModel = viewModel;
-//    }
+    public TodoListAdapter(TodoListViewModel viewModel) {
+        this.viewModel = viewModel;
+    }
     public void setTodoListItems(List<TodoListItem> newTodoItems) {
         this.todoItems.clear();
         this.todoItems = newTodoItems;

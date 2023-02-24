@@ -14,9 +14,9 @@ import java.util.concurrent.Executors;
 
 @Database(entities = {TodoListItem.class}, version = 1)
 public abstract class TodoDatabase extends RoomDatabase {
-//    public abstract TodoListItemDao todoListItemDao();
-    private static TodoDatabase singleton = null;
     public abstract TodoListItemDao todoListItemDao();
+    private static TodoDatabase singleton = null;
+//    public abstract TodoListItemDao todoListItemDao();
     public synchronized static TodoDatabase getSingleton(Context context) {
         if (singleton == null) {
             singleton = TodoDatabase.makeDatabase(context);
@@ -35,8 +35,8 @@ public abstract class TodoDatabase extends RoomDatabase {
                                     .loadJSON (context, "demo_todos. json");
                             getSingleton (context) .todoListItemDao() .insertAll (todos);
                         });
-            }
-        })
+                    }
+                })
                 .build();
     }
     @VisibleForTesting

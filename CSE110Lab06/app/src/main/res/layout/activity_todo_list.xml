@@ -6,46 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".TodoListActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/todo_items"
-        android:layout_width="273dp"
-        android:layout_height="226dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="332dp"
-        android:layout_marginEnd="1dp"
-
-        app:layout_constraintBaseline_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/new_todo_text"
-        android:layout_width="181dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="620dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="200dp"
         android:hint="Enter a todo here..."
         android:inputType="text"
+
         android:maxLines="1"
-
         app:layout_constraintBaseline_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/add_todo_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="100dp"
-        android:text="ADD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.896" />
+        app:layout_constraintVertical_bias="0.96" />
+
+    <Button
+        android:id="@+id/add_todo_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:text="ADD"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/todo_items"
+        android:layout_width="430dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="98dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/add_todo_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:layout_edicotr_absoluteX="3dp"
+        tools:layout_edicotr_absoluteY="2dp"
+        tools:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

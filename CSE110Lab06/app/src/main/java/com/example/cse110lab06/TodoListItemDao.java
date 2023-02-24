@@ -36,8 +36,8 @@ public interface TodoListItemDao {
     List<Long> insertAll(List<TodoListItem> todoListItem);
 
     @Database(entities = {TodoListItem .class}, version = 1)
-    public abstract class TodoDatabase extends RoomDatabase {
-    }
+    public abstract class TodoDatabase extends RoomDatabase {}
+
     @Query("SELECT `order` + 1 FROM `todo_list_items` ORDER BY `order` DESC LIMIT 1")
     int getOrderForAppend();
 }
